@@ -1,8 +1,8 @@
-/* CSS BY YOUR NAME */
+/* CSS BY MIN */
 
 /* IMPORTED FONTS*/
-/* IMPORT "INTER" FROM GOOGLE FONTS"
-
+/* IMPORT "INTER" FROM GOOGLE FONTS"*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 /* CSS RESET */
 /* http://meyerweb.com/eric/tools/css/reset/
 v2.0 | 20110126
@@ -70,29 +70,85 @@ table {
 .container {
     width: 90%;
     max-width: 1200px;
-    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: var(--blue);
+    color: var(--white);
+    margin: 1rem auto;
+    transition: transform .1s linear;
+}
+.container:hover{
+    transform: translate(0, -.5rem);
 }
 
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
- {
+main{
+    min-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: fit-content;
+}
+section{
+    width: 100%;
+}
+#innovation{
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
     height: 80vh;
-    display: grid;
-    place-items: center;
     text-align: center;
+    place-content: center;
     padding: 1rem;
     overflow: hidden;
+    width: 100%;
+    min-width: 400px;
 }
-
+#innovation p, #innovation h2, #innovation a{
+    
+    color: var(--white);
+    
+}
+#innovation div{
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    padding: 1rem;
+}
+#innovation h2{
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: block;
+}
+#innovation p{
+    margin-top: 1rem;
+    display: block;
+}
+#innovation a{
+    text-decoration: none;
+    display: block;
+    background-color: var(--blue);
+    max-width: 55%;
+    justify-self: center;
+    padding: 1rem;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: all .5s;
+}
+#innovation a:hover{
+    transform: scale(120%);
+    background-color: var(--red);
+}
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
- {
+header::before{
     content: "";
-
+    display: block;
+    position: relative;
     left:-.5rem;
     width: 3.75rem;
     height: 3.75rem;
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
-
+    animation: float 3s ease-in-out infinite alternate;
+}
+@keyframes float{
+    0%{top:0px;}
+    100%{top:-10px;}
 }
 /* THIS ONE IS DONE FOR YOU */
 #bar-chart {
@@ -106,6 +162,7 @@ table {
     max-width: 800px;
     padding: 1rem;
     position: relative;
+    transform: scale(90%);
 }
 /* ADD ON TRANSITION ON HEIGHT */
 .bar {
@@ -113,7 +170,7 @@ table {
     background: var(--charcoal);
     border-radius: 10px;
     position: relative;
-    transition: ;
+    transition: height 1s;
     height: 0;
 }
 /* THIS ONE IS DONE FOR YOU */
@@ -140,22 +197,314 @@ table {
     animation: stepUp 1s ease-in-out forwards;
 }
 
+body{
+    font-family: 'Inter';
+    background: var(--white);
+    overflow: auto;
 
+    width: 100%;
+    
+}
+#offering h2, #innovation h2, #results h2, #contact h2, h3{
+    position: relative;
+    animation: scroll 2s ease-out forwards;
+    margin-bottom: 2rem;
+}
+@keyframes scroll{
+    0%{top: -20px;}
+    100%{top: 0px;}
+}
+h1{
+    display: block;
+    color: var(--blue);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+nav{
+    color: var(--blue);
+    float: right;
+    text-align: right;
+}
+header{
+    position: relative;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: var(--black);
+    padding: 1rem;
+    border-bottom: 4px solid var(--blue);
+    box-shadow: 0 10px 10px -5px var(--blue);
+    box-shadow: 10px 10px -5px var(--blue);
+    min-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
+    
+}
+nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    text-align: center;
+    max-height: 0;
+    font-size: 2rem;
+}
+nav h2{
+    visibility: hidden;
+    height: 1px;
+}
+nav a{
+    display: block;
+    color: var(--blue);
+    padding: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1rem;
+    width: 150px;
+    transition: color .3s ease-in, background-color .3s ease-in;
+}
+nav a:hover, nav input:hover{
+    background-color: var(--blue);
+    color:var(--black);
+}
+label span {
+    background-color: white;
+    display: block;
+    height: .25rem;
+    position: relative;
+    width: 2rem;
+}
+nav label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 1.5rem;
+    user-select: none;
+    text-align: right;
+    
+}
+label span:before, label span:after {
+    background: white;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+label span:before {
+    top: .75rem;
+}
+label span:after {
+    top: -.75rem;
+}
+input {
+  display:none;
+}
+input:checked ~ ul {
+    max-height: 200px;
+}
+#expertise{
+    display: block;
+    justify-content: center;
+    margin: 0 auto;
+    align-content: center;
+    margin: 1rem;
+}
+#expertise p{
+    text-align: center;
+    margin: 1rem;
+    line-height: 1.5rem;
+}
+#expertise h2{
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 1rem 1rem 2rem;
+}
+#offer h2{
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 1rem 1rem 2rem;
+}
+#offer h3{
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 1rem;
+}
+#offer{
+    margin: 1rem;
+}
+#results{
+    background-color: var(--blue);
+    padding: 1rem;
+}
+#results h2{
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 1rem 1rem 2rem;
+    color: var(--white);
+}
+#results p{
+    color: var(--white);
+    font-size: .9rem;
+    margin: 0 .7rem;
+}
+#results h3{
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 1rem 1rem 2rem;
+    color: var(--white);
+}
+.results-container{
+    display: flex;
+    flex-direction: column;
+    
+}
+table{
+    color: var(--white);
+    text-align: center;
+}
+thead{
+    background-color: var(--black);
+}
+tbody tr:nth-child(odd){
+    background-color: var(--black);
+}
+tbody tr:nth-child(even){
+    background-color: var(--charcoal);
+}
+th{
+    padding: 1rem;
+    border: 2px solid var(--charcoal);
+}
+td{
+    padding: 1rem;
+    border: 2px solid var(--charcoal);
+}
+#contact{
+    padding: 1rem;
+    background-color: var(--black);
+}
+#contact h2{
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 1rem 1rem 2rem;
+    color: var(--white);
+}
+#contact p{
+    color: var(--white);
+    margin: 1rem;
+}
+#contact label{
+    color: var(--white);
+}
+#contact input{
+    display: block;
+	width: 100%;
+    height: 40px;
+    margin: .5rem;
+    justify-self: center;
+    border: 2px solid var(--blue);
+}
+#contact textarea{
+    display: block;
+	width: 100%;
+    height: 80px;
+    margin: .5rem;
+    justify-self: center;
+    border: 2px solid var(--blue);
+}
+
+button {
+    display: block;
+    background-color: var(--blue);
+    justify-self: center;
+    padding: .8rem;
+    border-radius: 10px;
+    font-weight: bold;
+    width: 100%;
+    font-size: 1.2rem;
+    color: var(--white);
+    margin-top: 2rem;
+    transition: color .5s linear, transform .5s linear;
+}
+button:hover{
+    background-color: var(--red);
+    transform: scale(101%);
+}
+footer{
+    background-color: var(--black);
+    color: var(--white);
+    padding: 1rem;
+    text-align: center;
+    min-width: 400px;
+    line-height: 2rem;
+}
 /* MEDIA QUERIES (MEDIUM) */ 
-
+@media all and (min-width: 800px){
     #results {
         grid-template-columns: 1fr 1fr;
     }
     .results-container {
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-evenly;
+        margin-top: 1rem;
+    }
+    .resultdiv{
+        display: flex;
+        flex-direction: column;
     }
     .results-table {
-        width: 50%;
+        width: 20%;
+        float: left;
     }
-    .bar-chart {
-        width: 50%;
+    #bar-chart {
+        max-width: 50%;
     }
-
+    header{
+        grid-template-columns: 1fr 3fr 5fr;
+    }
+    h1{
+        float: left;
+    }
+    nav ul {
+        overflow:visible;
+        position:absolute;
+        top: 1.5rem;
+        justify-content: right;
+        display: grid;
+        grid-template-columns:1fr 1fr 1fr;
+      }
+      nav li a {
+        display:inline-block;
+    }
+      label span, input {
+        display:none;
+      }
+    .offerdiv{
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+}
 
 /* MEDIA QUERIES (LARGE) */
+@media all and (min-width: 1024px){
+.offerdiv{
+    grid-template-columns: auto auto auto;
+    gap: 1rem;
+}
+form{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 1rem;
+}
+button{
+    margin-top: 0;
+    margin-bottom: 4rem;
+}
+}
